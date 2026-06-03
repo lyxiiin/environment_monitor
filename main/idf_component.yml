@@ -2,7 +2,8 @@
 dependencies:
   ## Required IDF version
   idf:
-    version: '>=4.1.0'
+    version: '>=5.0'
+  espressif/led_strip: ^3.0
   # # Put list of dependencies here
   # # For components maintained by Espressif:
   # component: "~1.0.0"
@@ -16,3 +17,4 @@ dependencies:
   #   public: true
   esp-idf-lib/scd4x: '*'
   esp-idf-lib/sht4x: '*'
+  espressif/mqtt: '*'

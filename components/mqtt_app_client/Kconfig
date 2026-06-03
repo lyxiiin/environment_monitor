@@ -1,0 +1,50 @@
+menu "MQTT Client Configuration"
+    config MQTT_BROKER_URI
+        string "mqtt broker"
+        default "mqtt://YOUR_BROKER_IP:1883"
+        help
+            MQTT broker address with protocol and port.
+
+    config MQTT_CLIENT_ID
+        string "mqtt client id"
+        default "esp32_env_monitor_001"
+        help
+            Unique client identifier for the MQTT broker.
+
+    config MQTT_USERNAME
+        string "MQTT Username"
+        default "YOUR_MQTT_USERNAME"
+        help
+            Username for broker authentication (leave empty if not required)
+
+    config MQTT_PASSWORD
+        string "MQTT Password"
+        default "YOUR_MQTT_PASSWORD"
+        help
+            Password for broker authentication.
+
+    config MQTT_PUBLISH_TOPIC
+        string "Publish Topic"
+        default "env_monitor/data"
+        help
+            Topic for publishing sensor data.
+
+    config MQTT_SUBSCRIBE_TOPIC
+        string "Subscribe Topic"
+        default "env_monitor/command"
+        help
+            Topic for subscribing user command.
+
+    config MQTT_KEEPALIVE
+        int "Keep-Alive Interval (seconds)"
+        default 60
+        help
+            MQTT keep-alive heartbeat interval.
+    config MQTT_QOS
+        int "MQTT Qos Level (0/1/2)"
+        range 0 2
+        default 1
+        help
+            Quality of Service: 0=At most once, 1=At least once, 2=Exactly once.
+            
+endmenu

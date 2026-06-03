@@ -1,0 +1,27 @@
+menu "WiFi Manager Configuration"
+    config WIFI_MANAGER_SSID
+        string "WiFi SSID"
+        default "YOUR_WIFI_SSID"
+        help
+            WiFi network name to connect to.
+    config WIFI_MANAGER_PASSWORD
+        string "WiFi Password"
+        default "YOUR_WIFI_PASSWORD"
+        help
+            WiFi password (WAP/WAP2).
+    config WIFI_MANAGER_MAX_RETRY
+            int "Maximum Retry Count"
+            default 5
+            help
+                Maximum reconnection attempts before giving up.
+    choice WIFI_MANAGER_AUTH_MODE
+        prompt "WiFi Authentication Mode Threshold"
+        default WIFI_MANAGER_AUTH_WPA2_PSK
+        config WIFI_MANAGER_AUTH_OPEN
+            bool "OPEN"
+        config WIFI_MANAGER_AUTH_WPA2_PSK
+            bool "WPA2 PSK"
+        config WIFI_MANAGER_AUTH_WPA3_PSK
+            bool "WPA3 PSK"
+    endchoice
+endmenu
